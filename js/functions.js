@@ -13,5 +13,5 @@
 
 // const stringLength2 = (string, length) => string.length <= length;
 
-let numder = Math.round(Math.random() * 100);
-console.log(numder);
+// let numder = Math.round(Math.random() * 100);
+// console.log(numder);
