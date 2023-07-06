@@ -20,4 +20,6 @@ const getUniqueNumber = function (min, max) {
 };
 getUniqueNumber ();
 
-export {getRandomNumder, getUniqueNumber};
+let random = Math.round(Math.random() * 100)
+
+export {getRandomNumder, getUniqueNumber, random};
