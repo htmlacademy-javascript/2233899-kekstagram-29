@@ -17,8 +17,6 @@ const createPhoto = ({url, description, likes, comments}) => {
 
 const renderPhoto = (pictures) => {
   const fragment = document.createDocumentFragment();
-
-
   pictures.forEach((picture) => {
     const photo = createPhoto(picture);
     fragment.append(photo);
