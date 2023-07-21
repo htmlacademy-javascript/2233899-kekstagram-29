@@ -1,5 +1,5 @@
-import { getRandomNumder } from "./util";
-import { getUniqueNumber } from "./util";
+import { getRandomNumder } from "./util.js";
+import { getUniqueNumber } from "./util.js";
 
 const NAMES = [
   'Влад',
@@ -73,11 +73,13 @@ let createPhotos = function () {
   return {
     photoId: getPhotoId(),
     url: getUrl(),
-    description: getMessage(),
+    description: 'Красивоя фотография',
     likes: getLikes(),
     Comment: Array({length: getRandomNumder(0, 25)}, getComment),
   };
 };
 
-let photoPages = Array.from({length: 25}, createPhotos);
-console.log(photoPages);
+const getPhotos = () => Array.from({length: 25})
+  .map(() => createPhotos());
+
+  export {getPhotos}
