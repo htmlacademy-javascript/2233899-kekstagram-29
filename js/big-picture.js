@@ -1,5 +1,3 @@
-import { renderPhoto } from "./thumbnails.js";
-
 const photoModalElement = document.querySelector('.big-picture');
 const commentCountElement = document.querySelector('.comments-count');
 const commentShownElement = document.querySelector('.comments-shown');
@@ -22,7 +20,7 @@ const hiddenModalPhoto = function () {
   bodyElement.classList.remove('modal-open');
   document.addEventListener('keydown', onDocumentKeydown);
   commentShow = 0;
-}
+};
 
 // Функция-обработчик нажатия Escape
 function onDocumentKeydown (evt) {
@@ -52,7 +50,7 @@ const createComment = ({avatar, name, message}) => {
   comment.querySelector('social__text').textContent = message;
 
   return comment;
-}
+};
 
 // Функция для показа комментариев
 const renderComments = () => {
@@ -62,12 +60,12 @@ const renderComments = () => {
     loaderCommentsElement.classList.add('hidden');
     commentShow = comments.length;
   } else {
-    loaderCommentsElement.classList.remove('hidden')
+    loaderCommentsElement.classList.remove('hidden');
   }
 
   const fragment = document.createDocumentFragment();
   for (let i = 0; i < commentShow; i++) {
-    const comment = createComment(comments[i])
+    const comment = createComment(comments[i]);
     fragment.append(comment);
   }
 
@@ -75,7 +73,7 @@ const renderComments = () => {
   socialCommentsElement.append (fragment);
   commentShownElement.textContent = commentShow;
   commentCountElement.textContent = comments.length;
-}
+};
 
 // Обработчик кнопки для дозагрузки комментариев
 const onCommentsLoaderClick = () => renderComments(comments);
@@ -88,16 +86,15 @@ const showModalPhoto = () => {
   commentCountElement.classList.remove('hidden');
   document.addEventListener('keydown', onDocumentKeydown);
 
-  renderPhoto(data);
+  renderPhotoData(data);
   comments = data.comments;
 
   if (comments.length > 0) {
-    renderComments(comments)
+    renderComments(comments);
   }
-}
+};
 
 cancelButtonElement.addEventListener('clik', onCancelButtonClick);
 loaderCommentsElement.addEventListener('clik', onCommentsLoaderClick);
 
-export {showModalPhoto}
-
+export {showModalPhoto};

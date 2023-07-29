@@ -1,8 +1,4 @@
-import { getPhotos } from './data.js';
-import { openModal } from './thumbnails.js';
+import { getPictures } from './data.js';
+import { openModal } from './gallery.js';
 
-openModal(getPhotos());
-
-
-
-
+openModal(getPictures());

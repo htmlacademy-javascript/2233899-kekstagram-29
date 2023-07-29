@@ -1,23 +1,20 @@
-// Cлучайные числа
-const getRandomNumder = function (min, max) {
-  return Math.round(Math.random() * (max - min + 1)) + min;
+const getRandomInteger = function (a, b) {
+  const lower = Math.ceil(Math.min(a, b));
+  const upper = Math.floor(Math.max(a, b));
+  const result = Math.random() * (upper - lower + 1) + lower;
+  return Math.floor(result);
 };
 
-// Универсальные числа
-const getUniqueNumber = function (min, max) {
-  const usedNumbers = [];
+const getRandomArreyElement = (array) =>
+  array[getRandomInteger(0, array.length - 1)];
 
-  return function () {
-    let currentNumber = getRandomNumder(min, max);
+const createIdGenerator = () => {
+  let lastGeneratedId = 0;
 
-    while (usedNumbers.includes(currentNumber)) {
-      currentNumber = getRandomNumder(min, max);
-    }
-    usedNumbers.push(currentNumber);
-    return currentNumber;
+  return () => {
+    lastGeneratedId += 1;
+    return lastGeneratedId;
   };
 };
 
-let random = Math.round(Math.random() * 100)
-
-export {getRandomNumder, getUniqueNumber, random};
+export {getRandomInteger, getRandomArreyElement, createIdGenerator};
