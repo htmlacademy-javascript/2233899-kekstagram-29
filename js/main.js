@@ -1,6 +1,8 @@
 import { getPhotos } from './data.js';
-import { renderPhoto } from './thumbnails.js';
+import { openModal } from './thumbnails.js';
 
-renderPhoto(getPhotos());
+openModal(getPhotos());
 
-console.log("hello main")
+
+
+

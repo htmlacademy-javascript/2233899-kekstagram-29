@@ -73,13 +73,13 @@ let createPhotos = function () {
   return {
     photoId: getPhotoId(),
     url: getUrl(),
-    description: 'Красивоя фотография',
+    description: 'Красивая фотография',
     likes: getLikes(),
-    Comment: Array({length: getRandomNumder(0, 25)}, getComment),
+    Comment: Array({length: getRandomNumder(1, 30)}, getComment),
   };
 };
 
 const getPhotos = () => Array.from({length: 25})
   .map(() => createPhotos());
 
-  export {getPhotos}
+  export {getPhotos, getPhotoId}

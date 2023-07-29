@@ -2,7 +2,6 @@
 const getRandomNumder = function (min, max) {
   return Math.round(Math.random() * (max - min + 1)) + min;
 };
-getRandomNumder();
 
 // Универсальные числа
 const getUniqueNumber = function (min, max) {
@@ -18,7 +17,6 @@ const getUniqueNumber = function (min, max) {
     return currentNumber;
   };
 };
-getUniqueNumber ();
 
 let random = Math.round(Math.random() * 100)
 
