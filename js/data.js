@@ -1,24 +1,20 @@
-import { getRandomNumder } from "./util.js";
-import { getUniqueNumber } from "./util.js";
+import {getRandomNumber} from './util.js';
+import {getUniqueNumber} from './util.js';
 
-const NAMES = [
-  'Влад',
+// Имена
+const names = [
   'Николай',
-  'Георгий',
-  'Андрей',
-  'Валера',
-  'Егор',
-  'Павел',
-  'Роман',
-  'Сергей',
-  'Степан',
-  'Расул',
+  'Улюяна',
   'Давид',
-  'Джимми',
-  'Артем',
-  'Эдуард',
+  'Любовь',
+  'Марина',
+  'Одиссей',
+  'Пассейдон',
+  'Миша',
   'Максим',
-  'Армен',
+  'Юрий',
+  'Азхар',
+  'Месси',
 ];
 
 const messages = [
@@ -31,55 +27,62 @@ const messages = [
 ];
 
 // Генератор комментариев
-const getMessage = function () {
-  let message = messages[getRandomNumder(0, messages.length - 1)];
-  return message;
-};
+const getMessage = () => messages[getRandomNumber(0, messages.length - 1)];
+getMessage();
 
-// Аватары
-const getAvatar = function () {
-  const avatar = `img/avatar-${getRandomNumder(1, 6)}.svg`;
-  return avatar;
-};
+// Генератор аватаров
+const getAvatar = () => `img/avatar-${getRandomNumber(1, 6)}.svg`;
+getAvatar();
 
-// id
-const getId = function () {
-  const uniqueId = getUniqueNumber(1, 15570);
-  const id = uniqueId();
-  return id;
-};
+// Генератор id
+const getId = () => ((uniqueId) => uniqueId())(getUniqueNumber(1, 15570));
+getId();
 
-// Комментарии
+// Генератор комментария
 const getComment = function () {
   return {
     id: getId(),
     avatar: getAvatar(),
     message: getMessage(),
-    name: NAMES[getRandomNumder(0, NAMES.length - 1)],
+    name: names[getRandomNumber(0, names.length - 1)],
   };
 };
-getComment();
 
-// id фотографии
+// Генератор фото-id
 const getPhotoId = getUniqueNumber(1, 25);
-const getUrl = function () {
-  return `photos/${getRandomNumder(1, 25)}.jpg`;
-};
+
+// Генератор url
+const getNumberForPhotoURL = getUniqueNumber(1, 25);
+const getUrl = () => `photos/${getNumberForPhotoURL()}.jpg`;
+
 const getLikes = function () {
-  return getRandomNumder(15, 200);
+  return getRandomNumber(15, 200);
 };
 
-let createPhotos = function () {
+const description = [
+  'Красивая фотография',
+  'Что за прекрасный вид',
+  'Что за красотааа',
+  'Отдых просто кайф',
+  'Прикольно'
+]
+
+const getDescription = () => description[getRandomNumber(0, description.length - 1)];
+
+// Данные фотографии
+const getPhotoData = function () {
   return {
     photoId: getPhotoId(),
     url: getUrl(),
-    description: 'Красивоя фотография',
+    description: getDescription(),
     likes: getLikes(),
-    Comment: Array({length: getRandomNumder(0, 25)}, getComment),
+    comments: Array.from({length: getRandomNumber(0, 30)}, getComment),
   };
 };
 
-const getPhotos = () => Array.from({length: 25})
-  .map(() => createPhotos());
 
-  export {getPhotos}
+// // Массив из 25 объектов-фото
+const getPhotos = () => Array.from({length: 25})
+  .map(() => getPhotoData());
+
+export { getPhotoData, getPhotos };
