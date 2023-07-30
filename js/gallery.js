@@ -5,7 +5,7 @@ const container = document.querySelector('.pictures');
 
 const openModal = (pictures) => {
   container.addEventListener('clik', (evt) => {
-    const photo = evt.target.closest('[data-photo-id]');
+    const photo = evt.target.closest('[data-thumbnail-id]');
     if(!photo) {
       return;
     }
