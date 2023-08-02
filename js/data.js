@@ -59,6 +59,7 @@ const getLikes = function () {
   return getRandomNumber(15, 200);
 };
 
+
 const description = [
   'Красивая фотография',
   'Что за прекрасный вид',
@@ -69,6 +70,7 @@ const description = [
 
 const getDescription = () => description[getRandomNumber(0, description.length - 1)];
 
+
 // Данные фотографии
 const getPhotoData = function () {
   return {
@@ -77,7 +79,9 @@ const getPhotoData = function () {
 
     description: getDescription(),
     likes: getLikes(),
+
     comments: Array.from({length: getRandomNumber(0, 30)}, getComment),
+
 
   };
 };
@@ -89,4 +93,5 @@ const getPhotos = () => Array.from({length: 25})
 
 
 export { getPhotoData, getPhotos };
+
 

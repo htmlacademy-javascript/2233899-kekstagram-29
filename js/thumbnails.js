@@ -1,4 +1,5 @@
 
+
 // Шаблон фото
 const photoTemplate = document.querySelector('#picture')
   .content.querySelector('.picture');
@@ -10,6 +11,10 @@ const container = document.querySelector('.pictures');
 const createPhoto = ({ url, description, likes, comments, photoId }) => {
   const photo = photoTemplate.cloneNode(true);
 
+
+// Отдельный элемент- фото
+const createPhoto = ({ url, description, likes, comments, photoId }) => {
+  const photo = photoTemplate.cloneNode(true);
   photo.querySelector('.picture__img').src = url;
   photo.querySelector('.picture__img').alt = description;
   photo.querySelector('.picture__likes').textContent = likes;
@@ -17,8 +22,10 @@ const createPhoto = ({ url, description, likes, comments, photoId }) => {
   photo.dataset.photoId = photoId;
 
 
+
   return photo;
 };
+
 
 
 // Отрисовка на странице всех миниатюр
@@ -32,8 +39,5 @@ const renderPhotos = (pictures) => {
   });
 
   container.append(fragment);
-
 };
-
-export {renderPhoto, openModal}
-
+export { renderPhotos };

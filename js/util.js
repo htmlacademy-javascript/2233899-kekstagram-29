@@ -1,8 +1,11 @@
 const getRandomNumber = function (min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
+getRandomNumber();
+
 
 getRandomNumber();
+
 
 // Генератор неповторяющихся чисел
 const getUniqueNumber = function (min, max) {
@@ -20,6 +23,5 @@ const getUniqueNumber = function (min, max) {
 };
 
 getUniqueNumber();
-
 
 export {getRandomNumber, getUniqueNumber};
