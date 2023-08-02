@@ -21,4 +21,5 @@ const getUniqueNumber = function (min, max) {
 
 getUniqueNumber();
 
+
 export {getRandomNumber, getUniqueNumber};

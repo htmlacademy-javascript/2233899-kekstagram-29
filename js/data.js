@@ -74,8 +74,7 @@ const getPhotoData = function () {
   };
 };
 
-
-// // Массив из 25 объектов-фото
+// Массив из 25 объектов-фото
 const getPhotos = () => Array.from({length: 25})
   .map(() => getPhotoData());
 
