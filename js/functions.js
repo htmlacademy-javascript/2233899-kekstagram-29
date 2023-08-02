@@ -11,4 +11,5 @@ const miteengTime = function (workSrart, workEnd, meetStart, meetTime) {
   console.log(meetStartMin >= workStartMin && meetStartMin + meetTime <= workendtMin)
 };
 
+
 miteengTime('08:00', '17:30', '16:00', 90);
