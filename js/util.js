@@ -1,23 +1,24 @@
-// Cлучайные числа
-const getRandomNumder = function (min, max) {
-  return Math.round(Math.random() * (max - min + 1)) + min;
+const getRandomNumber = function (min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 };
+getRandomNumber();
 
-// Универсальные числа
+
+// Генератор неповторяющихся чисел
 const getUniqueNumber = function (min, max) {
   const usedNumbers = [];
 
   return function () {
-    let currentNumber = getRandomNumder(min, max);
+    let currentNumber = getRandomNumber (min, max);
 
     while (usedNumbers.includes(currentNumber)) {
-      currentNumber = getRandomNumder(min, max);
+      currentNumber = getRandomNumber(min, max);
     }
     usedNumbers.push(currentNumber);
     return currentNumber;
   };
 };
 
-let random = Math.round(Math.random() * 100)
+getUniqueNumber();
 
-export {getRandomNumder, getUniqueNumber, random};
+export {getRandomNumber, getUniqueNumber};

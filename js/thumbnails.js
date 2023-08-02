@@ -1,56 +1,33 @@
-import { showModalPhoto } from "./big-picture.js";
-const photoTemplate = document.querySelector("#picture")
-  .content.querySelector(".picture");
+// Шаблон фото
+const photoTemplate = document.querySelector('#picture')
+  .content.querySelector('.picture');
 
-const container = document.querySelector(".pictures")
+// Контейнер для сгенерированных фото
+const container = document.querySelector('.pictures');
 
-const createPhoto = ({comments, description, likes, url, id,}) => {
-  const photo  = photoTemplate.cloneNode(true);
-
+// Отдельный элемент- фото
+const createPhoto = ({ url, description, likes, comments, photoId }) => {
+  const photo = photoTemplate.cloneNode(true);
   photo.querySelector('.picture__img').src = url;
   photo.querySelector('.picture__img').alt = description;
-  photo.querySelector('.picture__likes').texstContent = likes;
-  photo.querySelector('.picture__comments').texstContent = comments;
-  photo.dataset.thumbnailId = id;
+  photo.querySelector('.picture__likes').textContent = likes;
+  photo.querySelector('.picture__comments').textContent = comments.length;
+  photo.dataset.photoId = photoId;
 
   return photo;
-}
+};
 
-const containersecond = document.querySelector('.pictures')
+// Отрисовка на странице всех миниатюр
+const renderPhotos = (pictures) => {
 
-const openModal = (pictures) => {
-  containersecond.addEventListener('clik', (evt) => {
-    const photo = evt.target.closest('[data-photo-id]');
-    if(!photo) {
-      return;
-    }
-
-    evt.preventDefault();
-    const picture = pictures.find((item) => item.photoId === +photo.dataset.photoId);
-    showModalPhoto(picture);
-  });
-
-  renderPhoto(pictures, container);
-}
-
-
-const renderPhoto = (pictures) => {
   const fragment = document.createDocumentFragment();
+
   pictures.forEach((picture) => {
     const photo = createPhoto(picture);
     fragment.append(photo);
   });
 
   container.append(fragment);
-}
 
-export {renderPhoto, openModal}
-
-
-
-
-
-
-
-
-
+};
+export { renderPhotos };
