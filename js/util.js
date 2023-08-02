@@ -4,6 +4,9 @@ const getRandomNumber = function (min, max) {
 getRandomNumber();
 
 
+getRandomNumber();
+
+
 // Генератор неповторяющихся чисел
 const getUniqueNumber = function (min, max) {
   const usedNumbers = [];
