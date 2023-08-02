@@ -59,22 +59,12 @@ const getLikes = function () {
   return getRandomNumber(15, 200);
 };
 
-const description = [
-  'Красивая фотография',
-  'Что за прекрасный вид',
-  'Что за красотааа',
-  'Отдых просто кайф',
-  'Прикольно'
-]
-
-const getDescription = () => description[getRandomNumber(0, description.length - 1)];
-
 // Данные фотографии
 const getPhotoData = function () {
   return {
     photoId: getPhotoId(),
     url: getUrl(),
-    description: getDescription(),
+    description: 'Красивая фотография',
     likes: getLikes(),
     comments: Array.from({length: getRandomNumber(0, 30)}, getComment),
   };
