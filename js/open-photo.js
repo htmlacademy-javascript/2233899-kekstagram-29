@@ -19,4 +19,5 @@ const openModal = (pictures) => {
   renderPhotos(pictures, container);
 };
 
+
 export { openModal };

@@ -75,4 +75,5 @@ const getPhotoData = function () {
 const getPhotos = () => Array.from({length: 25})
   .map(() => getPhotoData());
 
+
 export { getPhotoData, getPhotos };
