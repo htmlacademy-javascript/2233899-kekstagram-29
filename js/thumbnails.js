@@ -1,3 +1,4 @@
+
 // Шаблон фото
 const photoTemplate = document.querySelector('#picture')
   .content.querySelector('.picture');
@@ -15,11 +16,14 @@ const createPhoto = ({ url, description, likes, comments, photoId }) => {
   photo.querySelector('.picture__comments').textContent = comments.length;
   photo.dataset.photoId = photoId;
 
+
   return photo;
 };
 
+
 // Отрисовка на странице всех миниатюр
 const renderPhotos = (pictures) => {
+
   const fragment = document.createDocumentFragment();
 
   pictures.forEach((picture) => {
@@ -28,6 +32,8 @@ const renderPhotos = (pictures) => {
   });
 
   container.append(fragment);
+
 };
 
-export { renderPhotos };
+export {renderPhoto, openModal}
+

@@ -74,9 +74,11 @@ const getPhotoData = function () {
   return {
     photoId: getPhotoId(),
     url: getUrl(),
+
     description: getDescription(),
     likes: getLikes(),
     comments: Array.from({length: getRandomNumber(0, 30)}, getComment),
+
   };
 };
 
@@ -85,4 +87,6 @@ const getPhotoData = function () {
 const getPhotos = () => Array.from({length: 25})
   .map(() => getPhotoData());
 
+
 export { getPhotoData, getPhotos };
+
