@@ -3,6 +3,7 @@ const getRandomNumber = function (min, max) {
 };
 getRandomNumber();
 
+
 // Генератор неповторяющихся чисел
 const getUniqueNumber = function (min, max) {
   const usedNumbers = [];
@@ -17,6 +18,7 @@ const getUniqueNumber = function (min, max) {
     return currentNumber;
   };
 };
+
 getUniqueNumber();
 
 export {getRandomNumber, getUniqueNumber};
