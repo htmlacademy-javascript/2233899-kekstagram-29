@@ -66,7 +66,11 @@ const getPhotoData = function () {
     url: getUrl(),
     description: 'Красивая фотография',
     likes: getLikes(),
+
     comments: Array.from({length: getRandomNumber(0, 30)}, getComment),
+
+
+
   };
 };
 
@@ -76,3 +80,6 @@ const getPhotos = () => Array.from({length: 25})
 
 
 export { getPhotoData, getPhotos };
+
+
+
