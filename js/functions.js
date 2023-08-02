@@ -12,5 +12,3 @@ const miteengTime = function (workSrart, workEnd, meetStart, meetTime) {
 };
 
 miteengTime('08:00', '17:30', '16:00', 90);
-
-
