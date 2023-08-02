@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Одиссей Агапидис](https://up.htmlacademy.ru/javascript/29/user/2233899).
-* Наставник: `Неизвестно`.
+* Наставник: [Егор Глебов] (https://htmlacademy.ru/profile/beast).
 
 ---
 
